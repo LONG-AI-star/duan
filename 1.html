@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="1.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="caulong-icon"></div>
+        <h1>Đăng ký</h1>
+        
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">Tên đăng nhập</label>
+                <div class="input-wrapper">
+                    <span class="icon">👤</span>
+                    <input type="text" id="username" name="username" value="nhanvien1" required>
+                    <span class="number-badge">1</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <div class="input-wrapper">
+                    <span class="icon">🔒</span>
+                    <input type="password" id="password" name="password" value="******" required>
+                    <span class="password-toggle" onclick="togglePassword('password')">👁️</span>
+                    <span class="number-badge">2</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Nhập lại mật khẩu</label>
+                <div class="input-wrapper">
+                    <span class="icon">🔐</span>
+                    <input type="password" id="confirmPassword" name="confirmPassword" value="******" required>
+                    <span class="password-toggle" onclick="togglePassword('confirmPassword')">👁️</span>
+                    <span class="number-badge">3</span>
+                </div>
+            </div>
+
+            <button type="submit">Đăng Ký</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePassword(fieldId) {
+            const field = document.getElementById(fieldId);
+            field.type = field.type === 'password' ? 'text' : 'password';
+        }
+
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Mật khẩu không khớp! Vui lòng thử lại.');
+                return;
+            }
+            
+            alert('Đăng ký thành công! 🎉');
+        });
+    </script>
+</body>
+</html>

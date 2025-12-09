@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem thông tin</title>
+    <link rel="stylesheet" href="3.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h1>Quản Lý Sân</h1>
+        <div class="menu-item">Tổng quan</div>
+        <div class="menu-item">Quản lý đặt sân</div>
+        <div class="menu-item">Quản lý sân</div>
+        <div class="menu-item">Khách hàng</div>
+        <div class="menu-item">Sản phẩm</div>
+        <div class="menu-item">Báo cáo</div>
+        <div class="menu-item">Cài đặt</div>
+        <div class="menu-item">Đăng xuất</div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="menu-toggle">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <button class="refresh-btn">LÀM MỚI</button>
+                <div class="user-info">
+                    Nhân Viên
+                    <div class="user-avatar">👤</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Tổng quan hệ thống</h2>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Tổng sân</h3>
+                <div class="value">10</div>
+            </div>
+            <div class="stat-card">
+                <h3>Đặt sân tài đây</h3>
+                <div class="value">10</div>
+            </div>
+            <div class="stat-card">
+                <h3>Khách hàng</h3>
+                <div class="value">10</div>
+            </div>
+            <div class="stat-card">
+                <h3>Doanh thu</h3>
+                <div class="value">10 Đ</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="section">
+                <h3>Trạng thái sân</h3>
+                <div class="court-item">
+                    <span class="court-name">Sân1A</span>
+                    <span class="status-badge">TRỐNG</span>
+                </div>
+                <div class="court-item">
+                    <span class="court-name">Sân2A</span>
+                    <span class="status-badge">BẢO TRÌ</span>
+                </div>
+                <div class="court-item">
+                    <span class="court-name">Sân3A</span>
+                    <span class="status-badge">TRỐNG</span>
+                </div>
+                
+                <div class="summary-stats">
+                    <div class="summary-item">
+                        <div class="summary-value">6</div>
+                        <div class="summary-label">Trống</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">3</div>
+                        <div class="summary-label">Đang dùng</div>
+                    </div>
+                    <div class="summary-item">
+                        <div class="summary-value">4</div>
+                        <div class="summary-label">Bảo trì</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>Đặt sân gần đây</h3>
+                <div class="booking-item">
+                    <span class="booking-customer">KHÁCH HÀNG A</span>
+                    <span class="booking-status">ĐANG XÁC NHẬN</span>
+                </div>
+                <div class="booking-item">
+                    <span class="booking-customer">KHÁCH HÀNG A</span>
+                    <span class="booking-status">HOÀN THÀNH</span>
+                </div>
+                <div class="booking-item">
+                    <span class="booking-customer">KHÁCH HÀNG A</span>
+                    <span class="booking-status">HOÀN THÀNH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            alert('Menu toggle clicked!');
+        });
+
+        document.querySelector('.refresh-btn').addEventListener('click', function() {
+            location.reload();
+        });
+
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.menu-item').forEach(i => i.style.background = 'transparent');
+                this.style.background = 'rgba(255,255,255,0.1)';
+            });
+        });
+    </script>
+</body>
+</html>
